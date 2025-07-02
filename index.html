@@ -1,0 +1,689 @@
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="87476cc7-6e80-4b8b-bed4-ea79888761e2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Center - Công cụ đặc biệt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --dark: #1b263b;
+            --light: #f8f9fa;
+            --success: #4cc9f0;
+            --warning: #f72585;
+            --danger: #f94144;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--success), transparent);
+        }
+        
+        .card-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-body p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .requirements {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .requirements::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 15px 0 0 15px;
+        }
+        
+        .requirements h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .requirements ul {
+            list-style-type: none;
+        }
+        
+        .requirements li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .requirements li:last-child {
+            border-bottom: none;
+        }
+        
+        .requirements i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        .badge-new {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .badge-popular {
+            background: var(--success);
+            color: white;
+        }
+        
+        /* Scrollable Notification Modal */
+        .notification-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .notification-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        
+        .modal-body p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        
+        .modal-btn {
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .modal-btn.close-forever {
+            background: #e9ecef;
+            color: #495057;
+        }
+        
+        .modal-btn.close-forever:hover {
+            background: #dee2e6;
+        }
+        
+        .modal-btn.close-temporary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .modal-btn.close-temporary:hover {
+            background: var(--secondary);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .shortcut-list {
+            margin-top: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .shortcut-item {
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .shortcut-item:last-child {
+            border-bottom: none;
+        }
+        
+        .shortcut-key {
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-right: 15px;
+            min-width: 100px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .shortcut-desc {
+            color: #555;
+        }
+        
+        /* Custom scrollbar for modal */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .modal-btn {
+                width: 100%;
+            }
+            
+            .notification-modal {
+                max-height: 90vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrollable Notification Modal -->
+    <div class="notification-modal" id="notificationModal">
+        <div class="modal-header">
+            <h3><i class="fas fa-info-circle"></i> Hướng dẫn sử dụng</h3>
+            <button class="close-modal" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Lưu ý quan trọng:</strong> Khi tải tool xuống, thông thường bạn cần giải nén file để sử dụng. Nếu file đã được giải nén sẵn, bạn chỉ cần chạy file trực tiếp.</p>
+            <p>Nếu gặp lỗi khi chạy tool, vui lòng:</p>
+            <ol style="margin-left: 20px; margin-bottom: 15px;">
+                <li>Tải và cài đặt Python 3.12</li>
+                <li>Chạy file setup.bat để cài đặt các thư viện cần thiết</li>
+                <li>Đảm bảo đã tắt Windows Defender hoặc phần mềm diệt virus</li>
+                <li>Chạy tool với quyền Administrator (nhấn chuột phải chọn "Run as administrator")</li>
+                <li>Kiểm tra kết nối Internet ổn định</li>
+                <li>Khởi động lại máy tính nếu cần thiết</li>
+            </ol>
+            
+            <h4 style="margin-bottom: 10px; color: var(--dark);">Các phím tắt quan trọng:</h4>
+            <div class="shortcut-list">
+                <div class="shortcut-item">
+                    <div class="shortcut-key">Ctrl + 1</div>
+                    <div class="shortcut-desc">Ẩn phần mềm</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key">Ctrl + 2</div>
+                    <div class="shortcut-desc">Hiện phần mềm</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key">Ctrl + M</div>
+                    <div class="shortcut-desc">Giải bài tập</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key">Ctrl + Shift</div>
+                    <div class="shortcut-desc">Xem lịch sử hoạt động</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key">Nút "Đóng"</div>
+                    <div class="shortcut-desc">Tắt phần mềm</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key">Alt + F4</div>
+                    <div class="shortcut-desc">Đóng nhanh ứng dụng</div>
+                </div>
+            </div>
+            
+            <h4 style="margin-top: 20px; margin-bottom: 10px; color: var(--dark);">Khắc phục sự cố thường gặp:</h4>
+            <div class="shortcut-list">
+                <div class="shortcut-item">
+                    <div class="shortcut-key"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="shortcut-desc">Nếu tool không chạy, thử tải lại file hoặc kiểm tra kết nối Internet</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key"><i class="fas fa-shield-alt"></i></div>
+                    <div class="shortcut-desc">Windows Defender có thể chặn file, cần tắt tạm thời hoặc thêm vào danh sách loại trừ</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key"><i class="fas fa-sync-alt"></i></div>
+                    <div class="shortcut-desc">Khởi động lại máy tính nếu gặp lỗi không xác định</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key"><i class="fas fa-download"></i></div>
+                    <div class="shortcut-desc">Đảm bảo đã tải đủ file (kiểm tra dung lượng file)</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key"><i class="fas fa-key"></i></div>
+                    <div class="shortcut-desc">Chạy với quyền admin nếu yêu cầu quyền hệ thống</div>
+                </div>
+            </div>
+            
+            <h4 style="margin-top: 20px; margin-bottom: 10px; color: var(--dark);">Thông tin bổ sung:</h4>
+            <div class="shortcut-list">
+                <div class="shortcut-item">
+                    <div class="shortcut-key"><i class="fas fa-clock"></i></div>
+                    <div class="shortcut-desc">Thời gian cập nhật: 15/06/2024</div>
+                </div>
+                <div class="shortcut-item">
+                    <div class="shortcut-key"><i class="fas fa-code-branch"></i></div>
+                    <div class="shortcut-desc">Phiên bản hiện tại: 2.4.1</div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #777;">
+                <i class="fas fa-info-circle"></i> Lưu ý: Nếu Bạn Muốn Lấy Key Vui Lòng Ấn Vào Nút Chat Để Nhắn Tin Và Đợi Phản Hồi Trong Vòng 24 Tiếng Đổ Lại .
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn close-forever" id="closeForever">Đóng và không hiện lại</button>
+            <button class="modal-btn close-temporary" id="closeTemporary">Đóng trong 2 giờ</button>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <header>
+        <div class="container">
+            <h1>Download Center</h1>
+            <p>Tải xuống các công cụ đặc biệt được phát triển bởi đội ngũ chuyên nghiệp</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Setup Tool <span class="badge badge-new">Mới</span></h3>
+                </div>
+                <div class="card-body">
+                    <p>Công cụ thiết lập hệ thống cần thiết để chạy các tool khác. Bấm tải xuống để cài đặt tự động.</p>
+                    <a href="https://ictu.io.vn/toolbypass/setup.bat" class="btn"><i class="fas fa-download"></i> Tải xuống</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Hải Anh Tool</h3>
+                </div>
+                <div class="card-body">
+                    <p>Công cụ đặc biệt được phát triển bởi ******* với nhiều tính năng hữu ích.</p>
+                    <a href="https://drive.google.com/file/d/18cne5lQOxf0A3QWes8uYjrZdsb5wiLAL/view?usp=sharing" class="btn"><i class="fas fa-download"></i> Tải xuống</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Tuấn Anh Tool <span class="badge badge-popular">Phổ biến</span></h3>
+                </div>
+                <div class="card-body">
+                    <p>Công cụ mạnh mẽ từ ******* với nhiều chức năng đặc biệt.</p>
+                    <a href="https://drive.google.com/file/d/1J8uKigpDezXELUZYx5FB3kDg14hVUT7j/view?usp=drive_link" class="btn"><i class="fas fa-download"></i> Tải xuống</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Tuấn Hưng Tool</h3>
+                </div>
+                <div class="card-body">
+                    <p>Giải pháp công nghệ từ ******* giúp tối ưu hiệu suất hệ thống.</p>
+                    <a href="https://drive.google.com/file/d/15Kt0KJmhlzYMo4kLDtFmBPDBPmMCw5KH/view?usp=sharing" class="btn"><i class="fas fa-download"></i> Tải xuống</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Minh Ngọc Tool</h3>
+                </div>
+                <div class="card-body">
+                    <p>Công cụ đa năng từ ******* với giao diện thân thiện.</p>
+                    <a href="https://drive.google.com/file/d/1a9w2PqJCTeuULH380-42csJmVJE3EIZi/view?usp=sharing" class="btn"><i class="fas fa-download"></i> Tải xuống</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Minh Quân Tool</h3>
+                </div>
+                <div class="card-body">
+                    <p>Giải pháp công nghệ cao cấp từ *******.</p>
+                    <a href="https://drive.google.com/file/d/1_azYjkyz52w5Te0fkt479FDwGtt8MXC7/view?usp=sharing" class="btn"><i class="fas fa-download"></i> Tải xuống</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="requirements">
+            <h2><i class="fas fa-tools"></i> Yêu cầu hệ thống</h2>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Windows 10/11 (64-bit)</li>
+                <li><i class="fas fa-check-circle"></i> Cần cài đặt Python 3.12 trước khi sử dụng các tool</li>
+                <li><i class="fas fa-check-circle"></i> Kết nối Internet ổn định</li>
+                <li><i class="fas fa-check-circle"></i> Tắt phần mềm diệt virus trước khi cài đặt (nếu có)</li>
+                <li><i class="fas fa-check-circle"></i> RAM tối thiểu 4GB (khuyến nghị 8GB)</li>
+                <li><i class="fas fa-check-circle"></i> Dung lượng trống ổ cứng tối thiểu 2GB</li>
+            </ul>
+            
+            <div style="margin-top: 30px;">
+                <a href="https://www.python.org/downloads/release/python-3120/" class="btn" style="background: var(--accent);"><i class="fab fa-python"></i> Tải Python 3.12</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2024 Download Center. All rights reserved.</p>
+            <p>Các công cụ được cung cấp cho mục đích sử dụng cá nhân, Nếu Bạn Muốn Lấy Key Vui Lòng Ấn Vào Nút Chat Để Nhắn Tin Và Đợi Phản Hồi Trong Vòng 24 Tiếng Đổ Lại</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Phiên bản 2.4.1 - Cập nhật lần cuối: 15/06/2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Show modal on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user has dismissed the modal before
+            const notificationDismissed = localStorage.getItem('notificationDismissed');
+            const notificationTimeout = localStorage.getItem('notificationTimeout');
+            
+            // If not dismissed forever and not within timeout period
+            if (notificationDismissed !== 'true' && 
+                (!notificationTimeout || Date.now() > parseInt(notificationTimeout))) {
+                const modal = document.getElementById('notificationModal');
+                const overlay = document.getElementById('overlay');
+                
+                modal.classList.add('active');
+                overlay.classList.add('active');
+                
+                // Add keyboard event listener for Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        closeModal();
+                    }
+                });
+            }
+        });
+        
+        // Close modal buttons
+        document.getElementById('closeModal').addEventListener('click', closeModal);
+        document.getElementById('overlay').addEventListener('click', closeModal);
+        
+        // Close forever button
+        document.getElementById('closeForever').addEventListener('click', function() {
+            localStorage.setItem('notificationDismissed', 'true');
+            closeModal();
+        });
+        
+        // Close for 2 hours button
+        document.getElementById('closeTemporary').addEventListener('click', function() {
+            const twoHoursLater = Date.now() + (2 * 60 * 60 * 1000);
+            localStorage.setItem('notificationTimeout', twoHoursLater.toString());
+            closeModal();
+        });
+        
+        function closeModal() {
+            const modal = document.getElementById('notificationModal');
+            const overlay = document.getElementById('overlay');
+            
+            modal.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
